@@ -11,6 +11,7 @@ class DbOps {
 		$this->conn = $db->connect();
 	}
 	
+	//Function to register user. Called in index.php in the /register path function.
 	public function registerUser($forename, $surname, $dob, $sex, $email, $pass){
 		$response = array();
 		

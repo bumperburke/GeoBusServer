@@ -40,7 +40,8 @@ $app->get('/getUsers', function(){
 
 
 $app->post('/register', function() use($app){
-	$response = array();
+	echo '<h1>Why Wont You Work</h1>';
+	/*$response = array();
 	
 	$name = $app->request->post('name');
 	$splitName = explode(" ", $name);
@@ -70,7 +71,7 @@ $app->post('/register', function() use($app){
 		$response["error"] = true;
 		$response["message"] = "Sorry, This User Already Exists";
 		echoResponse(200, $response);
-	}
+	}*/
 });
 
 function echoResponse($statusCode, $resp){
