@@ -39,39 +39,47 @@ $app->get('/getUsers', function(){
 });
 
 
-$app->post('/register', function(){
-	echo '<h1>Why Wont You Work</h1>';
-	/*$response = array();
+$app->post('/register', function() use ($app){
+	$response = array();
 	
-	$name = $app->request->post('name');
-	$splitName = explode(" ", $name);
-	$forename = $splitName[0];
-	$surname = $splitName[1];
+	$json = $app->request->getBody();
+	$data = json_decode($json, true);
 	
-	$dob = $app->request->post('dob');
+	$name = $data['name'];
+	if(strpos($name, ' ') !== FALSE)
+	{
+		$splitName = explode(" ", $name);
+		$forename = $splitName[0];
+		$surname = $splitName[1];
+	}else{
+		$forename = $name;
+		$surname = "";
+	}
+
+	$dob = $data['dob'];
 	$splitDob = explode("T", $dob);
 	$birthDate = $splitDob[0];
 	
-	$sex = $app->request->post('sex');
-	$email = $app->request->post('emailNew');
-	$pass = $app->request->post('password');
+	$sex = $data['sex'];
+	$email = $data['emailNew'];
+	$pass = $data['password'];
 	
 	$db = new DbOps();
 	$result = $db->registerUser($forename, $surname, $birthDate, $sex, $email, $pass);
 	
 	if($result == "Success"){
 		$response["error"] = false;
-		$response["message"] = "Registration Successful";
+		$response["message"] = "success";
 		echoResponse(201, $response);
 	} else if($result == "Fail"){
 		$response["error"] = true;
-		$response["message"] = "Sorry, Something's Gone Wrong";
+		$response["message"] = "fail";
 		echoResponse(200, $response);
 	} else if($result == "Duplicate User"){
 		$response["error"] = true;
-		$response["message"] = "Sorry, This User Already Exists";
+		$response["message"] = "duplicate";
 		echoResponse(200, $response);
-	}*/
+	}
 });
 
 function echoResponse($statusCode, $resp){

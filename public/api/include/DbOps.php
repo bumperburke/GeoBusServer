@@ -13,36 +13,38 @@ class DbOps {
 	
 	//Function to register user. Called in index.php in the /register path function.
 	public function registerUser($forename, $surname, $dob, $sex, $email, $pass){
-		$response = array();
 		
 		if(!$this->checkExistingUsers($email)){
 			$query = $this->conn->prepare("INSERT INTO users(forename, surname, birthdate, sex, email, password) VALUES (?,?,?,?,?,?)");
-			$query->bind_params("qqqqqq", $forename, $surname, $dob, $sex, $email, $pass);
+			$query->bind_param("ssssss", $forename, $surname, $dob, $sex, $email, $pass);
 			
 			$result = $query->execute();
 			$query->close();
 			
 			if($result){
 				return "Success";
-				//return "Account Created Succesfully";
 			} else {
 				return "Fail";
 			}
 		} else {
 			return "Duplicate User";
 		}
-		
-		return $response;
 	}
 	
 	private function checkExistingUsers($email){
-		$query = $this->conn->prepare("SELECT email FROM users WHERE email = ?");
-		$query->bind_params("q", $email);
+		$stmt = "SELECT email FROM users WHERE email = ?";
+		$query = $this->conn->prepare($stmt);
+		$show = $query->bind_param("s", $email);
 		$query->execute();
-		$query->store_result()->fetch_assoc();
-		$num_rows = $query->num_rows;
+		$query->store_result();
+		$result = $query->num_rows;
 		$query->close();
-		return $num_rows > 0;
+		
+		if($result > 0){
+			return true;
+		}else{
+			return false;
+		}
 	}
 	
 	public function getAllUsers(){
