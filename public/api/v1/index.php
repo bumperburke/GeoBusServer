@@ -9,7 +9,7 @@ require '../libs/slim/Slim/Slim.php';
 
 $app = new \Slim\Slim();
 
-$app->get('/', function() use($app){
+$app->get('/', function(){
     echo "Home - My Slim Application";
 });
 
@@ -39,7 +39,7 @@ $app->get('/getUsers', function(){
 });
 
 
-$app->post('/register', function() use($app){
+$app->post('/register', function(){
 	echo '<h1>Why Wont You Work</h1>';
 	/*$response = array();
 	
