@@ -15,7 +15,8 @@ class DbOps {
 	public function registerUser($forename, $surname, $dob, $sex, $email, $pass){
 		
 		if(!$this->checkExistingUsers($email)){
-			$query = $this->conn->prepare("INSERT INTO users(forename, surname, birthdate, sex, email, password) VALUES (?,?,?,?,?,?)");
+			$stmt = "INSERT INTO users(forename, surname, birthdate, sex, email, password) VALUES (?,?,?,?,?,?)";
+			$query = $this->conn->prepare($stmt);
 			$query->bind_param("ssssss", $forename, $surname, $dob, $sex, $email, $pass);
 			
 			$result = $query->execute();
@@ -34,7 +35,7 @@ class DbOps {
 	private function checkExistingUsers($email){
 		$stmt = "SELECT email FROM users WHERE email = ?";
 		$query = $this->conn->prepare($stmt);
-		$show = $query->bind_param("s", $email);
+		$query->bind_param("s", $email);
 		$query->execute();
 		$query->store_result();
 		$result = $query->num_rows;
@@ -47,13 +48,30 @@ class DbOps {
 		}
 	}
 	
-	public function getAllUsers(){
+	public function checkLoginCreds($email){
+		$stmt = "SELECT email, password FROM users WHERE email = ?";
+		$query = $this->conn->prepare($stmt);
+		$query->bind_params("ss", $email);
+		$query->execute();
+		$result = $query->num_rows;
+		if($result > 0){
+			$user = $query->get_result();
+			$query->close();
+		}else{
+			$user = null;
+			$query->close();
+		}
+		
+		return user;
+	}
+	
+	/*public function getAllUsers(){
 		$query = $this->conn->prepare("SELECT * FROM users");
 		$query->execute();
 		$users = $query->get_result();
 		$query->close();
 		return $users;
-	}
+	}*/
 }
 
 ?>

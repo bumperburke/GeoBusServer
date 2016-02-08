@@ -13,7 +13,7 @@ $app->get('/', function(){
     echo "Home - My Slim Application";
 });
 
-$app->get('/getUsers', function(){
+/*$app->get('/getUsers', function(){
 	$response = array();
 	
 	$db = new DbOps();
@@ -36,8 +36,30 @@ $app->get('/getUsers', function(){
 	}
 	
 	echoResponse(200, $response);
-});
+});*/
 
+
+$app->post('/login', function() use ($app)){
+	$response = array();
+	
+	$json = $app->request->getBody();
+	$data = json_decode($json, true);
+	
+	$email = $data['email'];
+	$pass = $data['password'];
+	
+	$db = new DbOps();
+	$result = $db->checkLoginCreds($email);
+	if($result == null){
+		$response["error"] = true;
+		$response["message"] = "Invalid Login Credentials!";
+		echoResponse(200, $response);
+	}
+	else if($result != NULL){
+		var_dump($result);
+	}
+	
+}
 
 $app->post('/register', function() use ($app){
 	$response = array();
@@ -64,8 +86,13 @@ $app->post('/register', function() use ($app){
 	$email = $data['emailNew'];
 	$pass = $data['password'];
 	
+	$options = ['cost' => 10,
+				'salt' => mycrypt_create_iv(22, MCRYPT_DEV_URANDOM)];
+	
+	$password = password_hash($pass, PASSWORD_BCRYPT, $options);
+	
 	$db = new DbOps();
-	$result = $db->registerUser($forename, $surname, $birthDate, $sex, $email, $pass);
+	$result = $db->registerUser($forename, $surname, $birthDate, $sex, $email, $password);
 	
 	if($result == "Success"){
 		$response["error"] = false;
