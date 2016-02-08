@@ -39,7 +39,7 @@ $app->get('/', function(){
 });*/
 
 
-$app->post('/login', function() use ($app)){
+$app->post('/login', function() use ($app){
 	$response = array();
 	
 	$json = $app->request->getBody();
@@ -52,14 +52,27 @@ $app->post('/login', function() use ($app)){
 	$result = $db->checkLoginCreds($email);
 	if($result == null){
 		$response["error"] = true;
-		$response["message"] = "Invalid Login Credentials!";
+		$response["message"] = "credFail";
 		echoResponse(200, $response);
 	}
 	else if($result != NULL){
-		var_dump($result);
+		if(password_verify($pass, $result['password'])){
+			$response["error"] = false;
+			$response["user"] = $email;
+			$response["token"] = bin2hex(openssl_random_pseudo_bytes(16));
+			$response["message"] = "confirmed";
+
+			$tokenExpire = date('Y-m-d H:i:s', strtotime('+1 hour'));
+			$db->updateUserToken($email, $response["token"], $tokenExpire);
+			echoResponse(200, $response);
+		}else{
+			$response["error"] = true;
+			$response["message"] = "credFail";
+			echoResponse(200, $response);
+		}
 	}
 	
-}
+});
 
 $app->post('/register', function() use ($app){
 	$response = array();
@@ -87,7 +100,7 @@ $app->post('/register', function() use ($app){
 	$pass = $data['password'];
 	
 	$options = ['cost' => 10,
-				'salt' => mycrypt_create_iv(22, MCRYPT_DEV_URANDOM)];
+			'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)];
 	
 	$password = password_hash($pass, PASSWORD_BCRYPT, $options);
 	

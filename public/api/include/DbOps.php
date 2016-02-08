@@ -51,20 +51,31 @@ class DbOps {
 	public function checkLoginCreds($email){
 		$stmt = "SELECT email, password FROM users WHERE email = ?";
 		$query = $this->conn->prepare($stmt);
-		$query->bind_params("ss", $email);
-		$query->execute();
-		$result = $query->num_rows;
-		if($result > 0){
-			$user = $query->get_result();
-			$query->close();
+		$query->bind_param("s", $email);
+		$result = $query->execute();
+		$query->store_result();
+		$user = array();
+
+		if($query->num_rows > 0){
+			$query->bind_result($fetchedEmail, $fetchedPass);
+			$data = $query->fetch();
+			$user = array("email"=>$fetchedEmail, "password"=>$fetchedPass);
 		}else{
 			$user = null;
-			$query->close();
 		}
-		
-		return user;
+
+		$query->close();
+		return $user;
 	}
-	
+
+	public function updateUserToken($email, $token, $expireTime){
+		$stmt = "UPDATE users SET apiToken = ?, tokenExpire = ? WHERE email = ?";
+		$query = $this->conn->prepare($stmt);
+		$query->bind_param("sss", $token, $expireTime, $email);
+		$query->execute();
+		$query->close();
+	}
+
 	/*public function getAllUsers(){
 		$query = $this->conn->prepare("SELECT * FROM users");
 		$query->execute();
