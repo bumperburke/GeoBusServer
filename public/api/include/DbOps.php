@@ -1,4 +1,9 @@
 <?php
+/**
+  * @author Stefan Burke
+  * @author Stefan Burke <stefan.burke@mydit.ie>
+  */
+date_default_timezone_set('Europe/Dublin');
 
 class DbOps {
 	
@@ -75,14 +80,60 @@ class DbOps {
 		$query->execute();
 		$query->close();
 	}
-
-	/*public function getAllUsers(){
-		$query = $this->conn->prepare("SELECT * FROM users");
+	
+	public function hasTokenExpired($token){
+		$stmt = "SELECT tokenExpire FROM users WHERE apiToken = ?";
+		$query = $this->conn->prepare($stmt);
+		$query->bind_param("s", $token);
 		$query->execute();
-		$users = $query->get_result();
+		$query->bind_result($fetchedExpirery);
+		$currentTime = date('Y-m-d H:i:s');
+		if($currentTime > $fetchedExpirery){
+			return true;
+		}
+		else{
+			return false;
+		}
 		$query->close();
-		return $users;
-	}*/
+	}
+	
+	public function keepTokenAlive($token, $expireTime){
+		$stmt = "UPDATE users SET tokenExpire = ? WHERE apiToken = ?";
+		$query = $this->conn->prepare($stmt);
+		$query->bind_param("ss", $expireTime, $token);
+		$query->execute();
+		$query->close();
+	}
+	
+	public function tokenCheck($token){
+		$stmt = "SELECT userID FROM users WHERE apiToken = ?";
+		$query = $this->conn->prepare($stmt);
+		$query->bind_param("s", $token);
+		$query->execute();
+		$query->store_result();
+		
+		if($query->num_rows > 0){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	
+	public function updateLocation($lat, $lon, $time){
+		$location = 'POINT(' .$lat. " " .$lon. ')';
+		$stmt = "INSERT INTO locations(geoLocation, timestamp) VALUES (geomFromText(:location), ?)";
+		$query = $this->conn->prepare($stmt);
+		$query->bind_param("s", $token);
+		$query->bind_param(":location", $location);
+		$result = $query->execute();
+		$query->close();
+		if($result){
+			return "success";
+		}else{
+			return "error";
+		}
+	}
 }
 
 ?>

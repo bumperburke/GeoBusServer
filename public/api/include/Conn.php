@@ -1,4 +1,9 @@
 <?php
+/**
+  * @author Stefan Burke
+  * @author Stefan Burke <stefan.burke@mydit.ie>
+  */
+date_default_timezone_set('Europe/Dublin');
 
 class conn {
 	

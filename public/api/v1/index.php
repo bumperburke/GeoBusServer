@@ -1,4 +1,9 @@
 <?php
+/**
+  * @author Stefan Burke
+  * @author Stefan Burke <stefan.burke@mydit.ie>
+  */
+date_default_timezone_set('Europe/Dublin');
 
 require_once '../include/DbOps.php';
 require_once '../include/Conn.php';
@@ -12,32 +17,6 @@ $app = new \Slim\Slim();
 $app->get('/', function(){
     echo "Home - My Slim Application";
 });
-
-/*$app->get('/getUsers', function(){
-	$response = array();
-	
-	$db = new DbOps();
-	
-	$result = $db->getAllUsers();
-	
-	$response["error"] = false;
-	$response["users"] = array();
-	
-	while($user = $result->fetch_assoc()){
-		$tmp = array();
-		$tmp["userID"] = $user["userID"];
-		$tmp["forename"] = $user["forename"];
-		$tmp["surname"] = $user["surname"];
-		$tmp["dob"] = $user["birthDate"];
-		$tmp["sex"] = $user["sex"];
-		$tmp["email"] = $user["email"];
-		$tmp["pass"] = $user["password"];
-		array_push($response["users"], $tmp);
-	}
-	
-	echoResponse(200, $response);
-});*/
-
 
 $app->post('/login', function() use ($app){
 	$response = array();
@@ -53,7 +32,7 @@ $app->post('/login', function() use ($app){
 	if($result == null){
 		$response["error"] = true;
 		$response["message"] = "credFail";
-		echoResponse(200, $response);
+		sendResp(200, $response);
 	}
 	else if($result != NULL){
 		if(password_verify($pass, $result['password'])){
@@ -64,11 +43,11 @@ $app->post('/login', function() use ($app){
 
 			$tokenExpire = date('Y-m-d H:i:s', strtotime('+1 hour'));
 			$db->updateUserToken($email, $response["token"], $tokenExpire);
-			echoResponse(200, $response);
+			sendResp(200, $response);
 		}else{
 			$response["error"] = true;
 			$response["message"] = "credFail";
-			echoResponse(200, $response);
+			sendResp(200, $response);
 		}
 	}
 	
@@ -110,22 +89,76 @@ $app->post('/register', function() use ($app){
 	if($result == "Success"){
 		$response["error"] = false;
 		$response["message"] = "success";
-		echoResponse(201, $response);
+		sendResp(201, $response);
 	} else if($result == "Fail"){
 		$response["error"] = true;
 		$response["message"] = "fail";
-		echoResponse(200, $response);
+		sendResp(200, $response);
 	} else if($result == "Duplicate User"){
 		$response["error"] = true;
 		$response["message"] = "duplicate";
-		echoResponse(200, $response);
+		sendResp(200, $response);
 	}
 });
 
-function echoResponse($statusCode, $resp){
+function authenticate(\Slim\Slim\ $route){
+	$header = apache_request_headers();
+	$response = array();
 	$app = \Slim\Slim::getInstance();
 	
-	$app->status($statusCode);
+	if(isset($header['Auth'])){
+		$db = new DbOps();
+		
+		$token = $header['Auth'];
+		if(!$db->tokenCheck($token)){
+			$response["error"] = true;
+			$response["message"] = "invalid token";
+			sendResp(401, $response);
+			$app->stop();
+		}else if(db->hasTokenExpired($token)){
+			$response["error"] = true;
+			$response["message"] = "expired token";
+			sendResp(401, $response);
+			$app->stop();
+		}else {
+			$tokenExpire = date('Y-m-d H:i:s', strtotime('+1 hour'));
+			$db->keepTokenAlive($token, $tokenExpire);
+			$this->next->call();
+		}
+	}
+}
+
+$app->post('\updateLocation', function() use ($app){
+	$response = array();
+	
+	$json = $app->request->getBody();
+	$data = json_decode($json, true);
+	
+	$lat = $data['latitude'];
+	$lon = $data['longitude'];
+	
+	$dateTime = $data['time'];
+	$parseTime = explode("T", $dateTime);
+	$pasreTime2 = exlpode(".", $parseTime[1]);
+	$time = $parseTime[0]. " " .$parseTime2[0];
+	
+	$db = new DbOps();
+	$result = $db->updateLocation($lat, $lon, $time);
+	if($result == "success"){
+		$response["error"] = false;
+		$response["message"] = "success";
+		sendResp(201, $response);
+	}else{
+		$response["error"] = true;
+		$response["message"] = "fail";
+		sendResp(200, $response);
+	}
+}
+
+function sendResp($respCode, $resp){
+	$app = \Slim\Slim::getInstance();
+	
+	$app->status($respCode);
 	
 	$app->contentType('application/json');
 	
