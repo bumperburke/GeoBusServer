@@ -120,12 +120,11 @@ class DbOps {
 		}
 	}
 	
-	public function updateLocation($lat, $lon, $time){
-		$location = 'POINT(' .$lat. " " .$lon. ')';
-		$stmt = "INSERT INTO locations(geoLocation, timestamp) VALUES (geomFromText(:location), ?)";
+	public function updateLocation($lat, $lon, $time, $devID){
+		$location = 'POINT('.$lat." ".$lon.')';
+		$stmt = "INSERT INTO locations (geoLocation, timestamp, deviceID) VALUES (PointFromText(?), ?, ?)";
 		$query = $this->conn->prepare($stmt);
-		$query->bind_param("s", $token);
-		$query->bind_param(":location", $location);
+		$query->bind_param("ssi", $location, $time, $devID);
 		$result = $query->execute();
 		$query->close();
 		if($result){
@@ -133,6 +132,15 @@ class DbOps {
 		}else{
 			return "error";
 		}
+	}
+
+	public function getLocation(){
+		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM locations";
+		$query = $this->conn->prepare($stmt);
+		$query->execute();
+		$location = $query->get_result();
+		$query->close();
+		return $location;
 	}
 }
 

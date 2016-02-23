@@ -22,6 +22,7 @@ class conn {
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 		
+		//$this->conn = pg_connect(DB_HOST, PORT, DB_PASS, DB_NAME) or die('Connection Failed');
 		return $this->conn;
 	}
 	
