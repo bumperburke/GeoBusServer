@@ -135,7 +135,7 @@ class DbOps {
 	}
 
 	public function getLocation(){
-		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM locations";
+		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM locations WHERE deviceID = 1";
 		$query = $this->conn->prepare($stmt);
 		$query->execute();
 		$location = $query->get_result();

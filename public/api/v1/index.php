@@ -141,7 +141,7 @@ $app->get('/getLocation', function() use ($app){
 
 	$response["error"] = false;
 	while($loc = $result->fetch_assoc()){
-		$response["location"] = $loc['Ypos']. " " .$loc['Xpos'];
+		$response["location"] = $loc['Ypos']. ", " .$loc['Xpos'];
 	}
 	sendResp(200, $response);
 });
