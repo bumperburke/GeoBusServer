@@ -27,9 +27,6 @@ $app->post('/login', function() use ($app){
 	$email = $data['email'];
 	$pass = $data['password'];
 
-	//error_log(print_r($email,true));
-	//error_log(print_r($pass,true));
-
 	$db = new DbOps();
 	$result = $db->checkLoginCreds($email);
 	if($result == null){

@@ -19,8 +19,8 @@ class DbOps {
 	//Function to register user. Called in index.php in the /register path function.
 	public function registerUser($forename, $surname, $dob, $sex, $email, $pass){
 
-		if($this->checkExistingUsers($email) == false){
-			$stmt = "INSERT INTO user(forename, surname, birthdate, sex, email, password) VALUES (?,?,?,?,?,?)";
+		if(!$this->checkExistingUsers($email)){
+			$stmt = "INSERT INTO users(forename, surname, birthdate, sex, email, password) VALUES (?,?,?,?,?,?)";
 			$query = $this->conn->prepare($stmt);
 			$query->bind_param("ssssss", $forename, $surname, $dob, $sex, $email, $pass);
 
@@ -38,7 +38,7 @@ class DbOps {
 	}
 
 	private function checkExistingUsers($email){
-		$stmt = "SELECT email FROM user WHERE email = ?";
+		$stmt = "SELECT email FROM users WHERE email = ?";
 		$query = $this->conn->prepare($stmt);
 		$query->bind_param("s", $email);
 		$query->execute();
@@ -54,7 +54,7 @@ class DbOps {
 	}
 
 	public function checkLoginCreds($email){
-		$stmt = "SELECT email, password FROM user WHERE email = ?";
+		$stmt = "SELECT email, password FROM users WHERE email = ?";
 		$query = $this->conn->prepare($stmt);
 		$query->bind_param("s", $email);
 		$result = $query->execute();
@@ -74,7 +74,7 @@ class DbOps {
 	}
 
 	public function updateUserToken($email, $token, $expireTime){
-		$stmt = "UPDATE user SET apiToken = ?, tokenExpire = ? WHERE email = ?";
+		$stmt = "UPDATE users SET apiToken = ?, tokenExpire = ? WHERE email = ?";
 		$query = $this->conn->prepare($stmt);
 		$query->bind_param("sss", $token, $expireTime, $email);
 		$query->execute();
@@ -82,7 +82,7 @@ class DbOps {
 	}
 
 	public function hasTokenExpired($token){
-		$stmt = "SELECT tokenExpire FROM user WHERE apiToken = ?";
+		$stmt = "SELECT tokenExpire FROM users WHERE apiToken = ?";
 		$query = $this->conn->prepare($stmt);
 		$query->bind_param("s", $token);
 		$query->execute();
@@ -98,7 +98,7 @@ class DbOps {
 	}
 
 	public function keepTokenAlive($token, $expireTime){
-		$stmt = "UPDATE user SET tokenExpire = ? WHERE apiToken = ?";
+		$stmt = "UPDATE users SET tokenExpire = ? WHERE apiToken = ?";
 		$query = $this->conn->prepare($stmt);
 		$query->bind_param("ss", $expireTime, $token);
 		$query->execute();
@@ -106,7 +106,7 @@ class DbOps {
 	}
 
 	public function tokenCheck($token){
-		$stmt = "SELECT userID FROM user WHERE apiToken = ?";
+		$stmt = "SELECT userID FROM users WHERE apiToken = ?";
 		$query = $this->conn->prepare($stmt);
 		$query->bind_param("s", $token);
 		$query->execute();
@@ -120,11 +120,11 @@ class DbOps {
 		}
 	}
 
-	public function updateLocation($lat, $lon, $time, $busID){
+	public function updateLocation($lat, $lon, $time, $devID){
 		$location = 'POINT('.$lat." ".$lon.')';
-		$stmt = "INSERT INTO location (geoLocation, timestamp, busID) VALUES (PointFromText(?), ?, ?)";
+		$stmt = "INSERT INTO locations (geoLocation, timestamp, deviceID) VALUES (PointFromText(?), ?, ?)";
 		$query = $this->conn->prepare($stmt);
-		$query->bind_param("ssi", $location, $time, $busID);
+		$query->bind_param("ssi", $location, $time, $devID);
 		$result = $query->execute();
 		$query->close();
 		if($result){
@@ -135,22 +135,12 @@ class DbOps {
 	}
 
 	public function getLocation(){
-		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM location WHERE busID = 1";
-		//$stmt = "SELECT geoLocation FROM locations WHERE deviceID = 1";
+		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM locations WHERE deviceID = 1";
 		$query = $this->conn->prepare($stmt);
 		$query->execute();
-		$locations = $query->get_result();
+		$location = $query->get_result();
 		$query->close();
-		return $locations;
-	}
-
-	public function getStops(){
-		$stmt = "SELECT name, ST_X(location) as Xpos, ST_Y(location) as Ypos FROM stop WHERE routeID = 1;";
-		$query = $this->conn->prepare($stmt);
-		$query->execute();
-		$data = $query->get_result();
-		$query->close();
-		return $data;
+		return $location;
 	}
 }
 
