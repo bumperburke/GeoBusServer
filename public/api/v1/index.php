@@ -7,6 +7,7 @@ date_default_timezone_set('Europe/Dublin');
 
 require_once '../include/DbOps.php';
 require_once '../include/DBManager.php';
+require_once '../include/config.php';
 //require_once '../include/Conn.php';
 require '../libs/slim/Slim/Slim.php';
 
@@ -21,10 +22,10 @@ $app = new \Slim\Slim();
 
 $app->post('/login', function() use ($app){
 	$dbManager = new DBManager();
-    $db = new DbOps($dbManager);
-    $this->dbManager->openConn();
-	
-    $response = array();
+	$db = new DbOps($dbManager);
+	$dbManager->openConn();
+
+	$response = array();
 	$json = $app->request->getBody();
 	$data = json_decode($json, true);
 
@@ -38,7 +39,7 @@ $app->post('/login', function() use ($app){
 		sendResp(HTTPSTATUS_OK, $response);
 	}
 	else if($result != NULL){
-		if(password_verify($pass, $result['password'])){
+		if(password_verify($pass, $result[0]['password'])){
 			$response["error"] = false;
 			$response["user"] = $email;
 			$response["token"] = bin2hex(openssl_random_pseudo_bytes(16));
@@ -135,17 +136,13 @@ $app->get('/getLocation', function() use ($app){
 	$dbManager = new DBManager();
     $db = new DbOps($dbManager);
     $dbManager->openConn();
-	
+
     $response = array();
 	$result = $db->getLocation();
-
 	$response["error"] = false;
 	$rows = array();
-	while(next($result)){
-		$rows[] = $result;
-	}
 
-	$response["data"] = array('locations' => $rows);
+	$response["data"] = array('locations' => $result);
 	sendResp(HTTPSTATUS_OK, $response);
 	$dbManager->closeConn();
 });
@@ -154,27 +151,23 @@ $app->get('/getStops', function() use ($app){
 	$dbManager = new DBManager();
     $db = new DbOps($dbManager);
     $dbManager->openConn();
-    
+
 	$response = array();
 	$result = $db->getStops();
 
 	$response["error"] = false;
-	$rows = array();
-	while(next($result)){
-		$rows[] = $result;
-	}
 
-	$response["data"] = array('stops' => $rows);
+	$response["data"] = array('stops' => $result);
 	sendResp(HTTPSTATUS_OK, $response);
 	$dbManager->closeConn();
 });
 
 $app->get('/getTimetable/:name', function($timeTable) use ($app){
 	$dbManager = new DBManager();
-    $db = new DbOps($dbManager);
-    $dbManager->openConn();
+	$db = new DbOps($dbManager);
+	$dbManager->openConn();
 
-    $response = array();
+	$response = array();
 	$result = $db->getTimetable($timetable);
 	$dbManager->closeConn();
 });
