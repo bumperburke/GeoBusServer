@@ -9,110 +9,100 @@ class DbOps {
 
 	private $conn;
 
-	function DbOps(){
-		require_once dirname(__FILE__) . '/Conn.php';
-
-		$db = new Conn();
-		$this->conn = $db->connect();
+	function DbOps($DBManager){
+		$this->conn = $DBManager;
 	}
 
 	//Function to register user. Called in index.php in the /register path function.
-	public function registerUser($forename, $surname, $dob, $sex, $email, $pass){
+	public function registerUser($forename, $surname, $age, $sex, $email, $pass){
 
 		if($this->checkExistingUsers($email) == false){
-			$stmt = "INSERT INTO user(forename, surname, birthdate, sex, email, password) VALUES (?,?,?,?,?,?)";
-			$query = $this->conn->prepare($stmt);
-			$query->bind_param("ssssss", $forename, $surname, $dob, $sex, $email, $pass);
+			$stmt = "INSERT INTO user(forename, surname, age, sex, email, password) VALUES (?,?,?,?,?,?)";
+			$query = $this->conn->prepareQuery($stmt);
+			$this->conn->bindVal($query, 1, $forename, $this->conn->STRING);
+			$this->conn->bindVal($query, 2, $surname, $this->conn->STRING);
+			$this->conn->bindVal($query, 3, $age, $this->conn->INT);
+			$this->conn->bindVal($query, 4, $sex, $this->conn->STRING);
+			$this->conn->bindVal($query, 5, $email, $this->conn->STRING);
+			$this->conn->bindVal($query, 6, $pass, $this->conn->STRING);
 
-			$result = $query->execute();
-			$query->close();
-
-			if($result){
-				return "Success";
-			} else {
-				return "Fail";
-			}
+			$result = $this->conn->executeQuery($query);
+			return "Success";
 		} else {
 			return "Duplicate User";
-		}
-	}
+        }
+    }
+	
 
 	private function checkExistingUsers($email){
 		$stmt = "SELECT email FROM user WHERE email = ?";
-		$query = $this->conn->prepare($stmt);
-		$query->bind_param("s", $email);
-		$query->execute();
-		$query->store_result();
-		$result = $query->num_rows;
-		$query->close();
+		$query = $this->conn->prepareQuery($stmt);
+		$this->conn->bindVal($query, 1, $email, $this->conn->STRING);
+		$result = $this->conn->executeQuery($query);
+		$fetchedResults = $this->conn->fetchResults($query);
 
-		if($result > 0){
+		if(count($fetchedResults) > 0){
 			return true;
 		}else{
 			return false;
-		}
+        }
 	}
 
 	public function checkLoginCreds($email){
 		$stmt = "SELECT email, password FROM user WHERE email = ?";
-		$query = $this->conn->prepare($stmt);
-		$query->bind_param("s", $email);
-		$result = $query->execute();
-		$query->store_result();
-		$user = array();
-
-		if($query->num_rows > 0){
-			$query->bind_result($fetchedEmail, $fetchedPass);
-			$data = $query->fetch();
-			$user = array("email"=>$fetchedEmail, "password"=>$fetchedPass);
+		$query = $this->conn->prepareQuery($stmt);
+		$query->bindVal($stmt, 1, $email, $this->conn->STRING);
+		$result = $this->conn->executeQuery($query);
+		$fetchedResults = $this->conn>fetchResults($query);
+		
+		if(count($fetchedResults) > 0){
+			return $fetchedResults;
 		}else{
 			$user = null;
+			return $user;
 		}
-
-		$query->close();
-		return $user;
 	}
 
 	public function updateUserToken($email, $token, $expireTime){
 		$stmt = "UPDATE user SET apiToken = ?, tokenExpire = ? WHERE email = ?";
-		$query = $this->conn->prepare($stmt);
-		$query->bind_param("sss", $token, $expireTime, $email);
-		$query->execute();
-		$query->close();
+		$query = $this->conn->prepareQuery($stmt);
+		$query->bindVal($stmt, 1, $token, $this->conn->STRING);
+		$query->bindVal($stmt, 2, $expireTime, $this->conn->STRING);
+		$query->bindVal($stmt, 3, $email, $this->conn->STRING);
+		$this->conn->executeQuery($query);
 	}
 
 	public function hasTokenExpired($token){
 		$stmt = "SELECT tokenExpire FROM user WHERE apiToken = ?";
-		$query = $this->conn->prepare($stmt);
-		$query->bind_param("s", $token);
-		$query->execute();
-		$query->bind_result($fetchedExpirery);
+		$query = $this->conn->prepareQuery($stmt);
+		$query->bindVal($stmt, 1, $token, $this->conn->STRING);
+		$this->conn->executeQuery($query);
+		$fetchedResults = $this->conn->fetchResults($query);
 		$currentTime = date('Y-m-d H:i:s');
-		if($currentTime > $fetchedExpirery){
+		if($currentTime > $fetchedResults['tokenExpire']){
 			return true;
 		}
 		else{
 			return false;
 		}
-		$query->close();
 	}
 
 	public function keepTokenAlive($token, $expireTime){
 		$stmt = "UPDATE user SET tokenExpire = ? WHERE apiToken = ?";
-		$query = $this->conn->prepare($stmt);
-		$query->bind_param("ss", $expireTime, $token);
-		$query->execute();
-		$query->close();
+		$query = $this->conn->prepareQuery($stmt);
+		$query->bindVal($stmt, 1, $expireTime, $this->conn->STRING);
+		$query->bindVal($stmt, 2, $token, $this->conn->STRING);
+		$this->conn->executeQuery($query);
 	}
 
 	public function tokenCheck($token){
 		$stmt = "SELECT userID FROM user WHERE apiToken = ?";
-		$query = $this->conn->prepare($stmt);
-		$query->bind_param("s", $token);
-		$query->execute();
-		$query->store_result();
+		$query = $this->conn->prepareQuery($stmt);
+		$query->bindVal($stmt, 1, $token, $this->conn->STRING);
+		$this->conn->executeQuery($query);
+		$fetchedResults = $this->conn->fetchResults($query);
 
-		if($query->num_rows > 0){
+		if(count($fetchedResults) > 0){
 			return true;
 		}
 		else{
@@ -123,34 +113,39 @@ class DbOps {
 	public function updateLocation($lat, $lon, $time, $busID){
 		$location = 'POINT('.$lat." ".$lon.')';
 		$stmt = "INSERT INTO location (geoLocation, timestamp, busID) VALUES (PointFromText(?), ?, ?)";
-		$query = $this->conn->prepare($stmt);
-		$query->bind_param("ssi", $location, $time, $busID);
-		$result = $query->execute();
-		$query->close();
-		if($result){
-			return "success";
-		}else{
-			return "error";
-		}
+		$query = $this->conn->prepareQuery($stmt);
+		$query->bindVal($stmt, 1, $location, $this->conn->STRING);
+		$query->bindVal($stmt, 2, $time, $this->conn->STRING);
+		$query->bindVal($stmt, 3, $busID, $this->conn->INT);
+		$this->conn->executeQuery($query);
+		
+		return "success";
 	}
 
 	public function getLocation(){
 		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM location WHERE busID = 1";
-		//$stmt = "SELECT geoLocation FROM locations WHERE deviceID = 1";
-		$query = $this->conn->prepare($stmt);
-		$query->execute();
-		$locations = $query->get_result();
-		$query->close();
+		$query = $this->conn->prepareQuery($stmt);
+		$query->executeQuery($query);
+		$locations = $this->conn->fetchResults($query);
 		return $locations;
 	}
 
 	public function getStops(){
 		$stmt = "SELECT name, ST_X(location) as Xpos, ST_Y(location) as Ypos FROM stop WHERE routeID = 1;";
-		$query = $this->conn->prepare($stmt);
-		$query->execute();
-		$data = $query->get_result();
-		$query->close();
+		$query = $this->conn->prepareQuery($stmt);
+		$query->executeQuery($query);
+		$data = $this->conn->fecthResults($query);
 		return $data;
+	}
+	
+	public function getTimetable($timetable){
+		$stmt = "SELECT routeID FROM route WHERE routeName LIKE %?%;";
+		$query = $this->conn->prepareQuery($stmt);
+		$query->binVal($stmt, 1, $timetable, $this->conn->STRING);
+		$query->executeQuery($query);
+		$fetchedResults = $this->conn->fetchResults($query);
+		
+		
 	}
 }
 

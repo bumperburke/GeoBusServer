@@ -6,7 +6,8 @@
 date_default_timezone_set('Europe/Dublin');
 
 require_once '../include/DbOps.php';
-require_once '../include/Conn.php';
+require_once '../include/DBManager.php';
+//require_once '../include/Conn.php';
 require '../libs/slim/Slim/Slim.php';
 
 
@@ -14,28 +15,27 @@ require '../libs/slim/Slim/Slim.php';
 
 $app = new \Slim\Slim();
 
-$app->get('/', function(){
+/*$app->get('/', function(){
     echo "Home - My Slim Application";
-});
+});*/
 
 $app->post('/login', function() use ($app){
-	$response = array();
-
+	$dbManager = new DBManager();
+    $db = new DbOps($dbManager);
+    $this->dbManager->openConn();
+	
+    $response = array();
 	$json = $app->request->getBody();
 	$data = json_decode($json, true);
 
 	$email = $data['email'];
 	$pass = $data['password'];
 
-	//error_log(print_r($email,true));
-	//error_log(print_r($pass,true));
-
-	$db = new DbOps();
 	$result = $db->checkLoginCreds($email);
 	if($result == null){
 		$response["error"] = true;
 		$response["message"] = "credFail";
-		sendResp(200, $response);
+		sendResp(HTTPSTATUS_OK, $response);
 	}
 	else if($result != NULL){
 		if(password_verify($pass, $result['password'])){
@@ -46,67 +46,65 @@ $app->post('/login', function() use ($app){
 
 			$tokenExpire = date('Y-m-d H:i:s', strtotime('+1 hour'));
 			$db->updateUserToken($email, $response["token"], $tokenExpire);
-			sendResp(200, $response);
+			sendResp(HTTPSTATUS_OK, $response);
 		}else{
 			$response["error"] = true;
 			$response["message"] = "credFail";
-			sendResp(200, $response);
+			sendResp(HTTPSTATUS_OK, $response);
 		}
 	}
 
 });
 
 $app->post('/register', function() use ($app){
-	$response = array();
+	$dbManager = new DBManager();
+    $db = new DbOps($dbManager);
+    $dbManager->openConn();
 
-	$json = $app->request->getBody();
-	$data = json_decode($json, true);
+    $response = array();
+    $json = $app->request->getBody();
+    $data = json_decode($json, true);
 
-	$name = $data['name'];
-	if(strpos($name, ' ') !== FALSE)
-	{
-		$splitName = explode(" ", $name);
-		$forename = $splitName[0];
-		$surname = $splitName[1];
-	}else{
-		$forename = $name;
-		$surname = "";
-	}
+    $name = $data['name'];
+    if(strpos($name, ' ') !== FALSE)
+    {
+        $splitName = explode(" ", $name);
+        $forename = $splitName[0];
+        $surname = $splitName[1];
+    }else{
+    	$forename = $name;
+        $surname = "";
+    }
 
-	$dob = $data['dob'];
-	$splitDob = explode("T", $dob);
-	$birthDate = $splitDob[0];
+    $age = $data['age'];
+    $sex = $data['sex'];
+    $email = $data['emailNew'];
+    $pass = $data['pass'];
 
-	$sex = $data['sex'];
-	$email = $data['emailNew'];
-	$pass = $data['pass'];
+    $options = ['cost' => 10, 'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)];
 
-	$options = ['cost' => 10,
-			'salt' => mcrypt_create_iv(22, MCRYPT_DEV_URANDOM)];
+    $password = password_hash($pass, PASSWORD_BCRYPT, $options);
 
-	$password = password_hash($pass, PASSWORD_BCRYPT, $options);
+    $result = $db->registerUser($forename, $surname, $age, $sex, $email, $password);
 
-	$db = new DbOps();
-	$result = $db->registerUser($forename, $surname, $birthDate, $sex, $email, $password);
-
-	if($result == "Success"){
-		$response["error"] = false;
-		$response["message"] = "success";
-		sendResp(201, $response);
-	} else if($result == "Fail"){
-		$response["error"] = true;
-		$response["message"] = "fail";
-		sendResp(200, $response);
+    if($result == "Success"){
+    	$response["error"] = false;
+        $response["message"] = "success";
+        sendResp(HTTPSTATUS_CREATED, $response);
 	} else if($result == "Duplicate User"){
 		$response["error"] = true;
 		$response["message"] = "duplicate";
-		sendResp(200, $response);
+		sendResp(HTTPSTATUS_OK, $response);
 	}
+	$dbManager->closeConn();
 });
 
 $app->post('/updateLocation', function() use ($app){
-	$response = array();
-
+	$dbManager = new DBManager();
+    $db = new DbOps($dbManager);
+    $dbManager->openConn();
+	
+    $response = array();
 	$json = $app->request->getBody();
 	$data = json_decode($json, true);
 
@@ -120,50 +118,65 @@ $app->post('/updateLocation', function() use ($app){
 
 	$deviceID = $data['deviceID'];
 
-	$db = new DbOps();
 	$result = $db->updateLocation($lat, $lon, $time, $busID);
 	if($result == "success"){
 		$response["error"] = false;
 		$response["message"] = "success";
-		sendResp(201, $response);
+		sendResp(HTTPSTATUS_CREATED, $response);
 	}else{
 		$response["error"] = true;
 		$response["message"] = "fail";
-		sendResp(200, $response);
+		sendResp(HTTPSTATUS_OK, $response);
 	}
+	$dbManager->closeConn();
 });
 
 $app->get('/getLocation', function() use ($app){
-	$response = array();
-
-	$db = new DbOps();
+	$dbManager = new DBManager();
+    $db = new DbOps($dbManager);
+    $dbManager->openConn();
+	
+    $response = array();
 	$result = $db->getLocation();
 
 	$response["error"] = false;
 	$rows = array();
-	while($loc = mysqli_fetch_assoc($result)){//$result->fetch_assoc()){
-		//$response["locations"] = $loc['Ypos']. ", " .$loc['Xpos'];
-		$rows[] = $loc;
+	while(next($result)){
+		$rows[] = $result;
 	}
 
 	$response["data"] = array('locations' => $rows);
-	sendResp(200, $response);
+	sendResp(HTTPSTATUS_OK, $response);
+	$dbManager->closeConn();
 });
 
 $app->get('/getStops', function() use ($app){
+	$dbManager = new DBManager();
+    $db = new DbOps($dbManager);
+    $dbManager->openConn();
+    
 	$response = array();
-
-	$db = new DbOps();
 	$result = $db->getStops();
 
 	$response["error"] = false;
 	$rows = array();
-	while($data = mysqli_fetch_assoc($result)){
-		$rows[] = $data;
+	while(next($result)){
+		$rows[] = $result;
 	}
 
 	$response["data"] = array('stops' => $rows);
-	sendResp(200, $response);
+	sendResp(HTTPSTATUS_OK, $response);
+	$dbManager->closeConn();
+});
+
+$app->get('/getTimetable/:name', function($timeTable) use ($app){
+	$dbManager = new DBManager();
+    $db = new DbOps($dbManager);
+    $dbManager->openConn();
+
+    $response = array();
+	$result = $db->getTimetable($timetable);
+	$dbManager->closeConn();
 });
 /*function authenticate(\Slim\Route\ $route){
 	$header = apache_request_headers();
