@@ -122,30 +122,124 @@ class DbOps {
 		return "success";
 	}
 
+	public function updateRouteMap($lat, $lon){
+		$location = 'POINT('.$lat." ".$lon.')';
+		$stmt = "INSERT INTO routeMap (routeID, location) VALUES (2, PointFromText(?))";
+		$query = $this->conn->prepareQuery($stmt);
+		$this->conn->bindVal($query, 1, $location, $this->conn->STRING);
+		$this->conn->executeQuery($query);
+
+		return "success";
+	}
+
 	public function getLocation(){
-		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM location WHERE busID = 1";
+		$stmt = "SELECT ST_Y(geoLocation) as Ypos, ST_X(geoLocation) as Xpos FROM location WHERE busID = 1 AND locID <= 26";
+		//$stmt = "SELECT ST_X(location) as Xpos, ST_Y(location) as Ypos FROM routeMap;";
 		$query = $this->conn->prepareQuery($stmt);
 		$this->conn->executeQuery($query);
 		$locations = $this->conn->fetchResults($query);
 		return $locations;
 	}
 
-	public function getStops(){
-		$stmt = "SELECT name, ST_X(location) as Xpos, ST_Y(location) as Ypos FROM stop WHERE routeID = 1;";
+	public function getRoute($route){
+		$stmt = "SELECT routeID FROM route WHERE routeName LIKE ?;";
 		$query = $this->conn->prepareQuery($stmt);
+		$this->conn->bindVal($query, 1, $route, $this->conn->STRING);
+		$this->conn->executeQuery($query);
+		$fetchedResults = $this->conn->fetchResults($query);
+		$routeID = intval($fetchedResults[0]['routeID']);
+
+		$stmt = "SELECT ST_X(location) as Xpos, ST_Y(location) as Ypos ";
+		$stmt .= "FROM routeMap WHERE routeID = ?;";
+		$query = $this->conn->prepareQuery($stmt);
+		$this->conn->bindVal($query, 1, $routeID, $this->conn->INT);
+		$this->conn->executeQuery($query);
+		$data = $this->conn->fetchResults($query);
+		return $data;
+	}
+
+	public function getStops($route){
+		$stmt = "SELECT routeID FROM route WHERE routeName LIKE ?;";
+		$query = $this->conn->prepareQuery($stmt);
+		$this->conn->bindVal($query, 1, $route, $this->conn->STRING);
+		$this->conn->executeQuery($query);
+		$fetchedResults = $this->conn->fetchResults($query);
+		$routeID = intval($fetchedResults[0]['routeID']);
+
+		$stmt = "SELECT name, ST_X(location) as Xpos, ST_Y(location) as Ypos FROM stop WHERE routeID = ?;";
+		$query = $this->conn->prepareQuery($stmt);
+		$this->conn->bindVal($query, 1, $routeID, $this->conn->INT);
 		$this->conn->executeQuery($query);
 		$data = $this->conn->fetchResults($query);
 		return $data;
 	}
 
 	public function getTimetable($timetable){
-		$stmt = "SELECT routeID FROM route WHERE routeName LIKE %?%;";
+		$stmt = "SELECT routeID FROM route WHERE routeName LIKE ?;";
 		$query = $this->conn->prepareQuery($stmt);
-		$this->conn->binVal($query, 1, $timetable, $this->conn->STRING);
-		$query->executeQuery($query);
+		$this->conn->bindVal($query, 1, $timetable, $this->conn->STRING);
+		$this->conn->executeQuery($query);
 		$fetchedResults = $this->conn->fetchResults($query);
+		$routeID = intval($fetchedResults[0]['routeID']);
+		$availDays = $this->checkDays($routeID);
 
+		if($availDays["monFri"] == true){
+			$stmt2 = "SELECT s.name, mt.time, mt.direction FROM midweekTime mt ";
+                	$stmt2 .= "INNER JOIN stop s ON s.stopID = mt.stopID ";
+ 			$stmt2 .= "WHERE s.routeID = ? ORDER BY midweekTimeID;";
+			$query2 = $this->conn->prepareQuery($stmt2);
+			$this->conn->bindVal($query2, 1, $routeID, $this->conn->INT);
+			$this->conn->executeQuery($query2);
+			$fetched["monFri"] = $this->conn->fetchResults($query2);
+		}else{}
 
+		if($availDays["sat"] == true){
+			$stmt3 = "SELECT s.name, st.time, st.direction FROM satTime st ";
+               		$stmt3 .= "INNER JOIN stop s ON s.stopID = st.stopID ";
+			$stmt3 .= "WHERE s.routeID = ? ORDER BY satTimeID;";
+			$query3 = $this->conn->prepareQuery($stmt3);
+			$this->conn->bindVal($query3, 1, $routeID, $this->conn->INT);
+			$this->conn->executeQuery($query3);
+			$fetched["sat"] = $this->conn->fetchResults($query3);
+		}else{}
+
+		if($availDays["sun"] == true){
+			$stmt4 = "SELECT s.name, st.time, st.direction FROM sunTime st ";
+               		$stmt4 .= "INNER JOIN stop s ON s.stopID = st.stopID ";
+ 			$stmt4 .= "WHERE s.routeID = ? ORDER BY sunTimeID;";
+			$query4 = $this->conn->prepareQuery($stmt4);
+			$this->conn->bindVal($query4, 1, $routeID, $this->conn->INT);
+			$this->conn->executeQuery($query4);
+			$fetched["sun"] = $this->conn->fetchResults($query4);
+		}else{}
+
+		return $fetched;
+	}
+
+	private function checkDays($routeID){
+		$stmt1 = "SELECT routeID from midweekTime WHERE routeID = ?;";
+		$query1 = $this->conn->prepareQuery($stmt1);
+		$this->conn->bindVal($query1, 1, $routeID, $this->conn->INT);
+		$result1 = $query1->execute();
+
+		$stmt2 = "SELECT routeID from satTime WHERE routeID = ?;";
+		$query2 = $this->conn->prepareQuery($stmt2);
+		$this->conn->bindVal($query2, 1, $routeID, $this->conn->INT);
+		$result2 = $query2->execute();
+
+		$stmt3 = "SELECT routeID from sunTime WHERE routeID = ?;";
+		$query3 = $this->conn->prepareQuery($stmt3);
+		$this->conn->bindVal($query3, 1, $routeID, $this->conn->INT);
+		$result3 = $query3->execute();
+
+		if($result1 == false){$results["monFri"] = false;}
+		else{$results["monFri"] = true;}
+		if($result2 == false){$results["sat"] = false;}
+		else{$results["sat"] = true;}
+		if($result3 == false){$results["sun"] = false;}
+		else{$results["sun"] = true;}
+
+		return $results;
 	}
 }
 

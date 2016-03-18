@@ -8,17 +8,12 @@ date_default_timezone_set('Europe/Dublin');
 require_once '../include/DbOps.php';
 require_once '../include/DBManager.php';
 require_once '../include/config.php';
-//require_once '../include/Conn.php';
 require '../libs/slim/Slim/Slim.php';
 
 
 \Slim\Slim::registerAutoloader();
 
 $app = new \Slim\Slim();
-
-/*$app->get('/', function(){
-    echo "Home - My Slim Application";
-});*/
 
 $app->post('/login', function() use ($app){
 	$dbManager = new DBManager();
@@ -102,10 +97,10 @@ $app->post('/register', function() use ($app){
 
 $app->post('/updateLocation', function() use ($app){
 	$dbManager = new DBManager();
-    $db = new DbOps($dbManager);
-    $dbManager->openConn();
-	
-    $response = array();
+	$db = new DbOps($dbManager);
+	$dbManager->openConn();
+
+	$response = array();
 	$json = $app->request->getBody();
 	$data = json_decode($json, true);
 
@@ -119,7 +114,32 @@ $app->post('/updateLocation', function() use ($app){
 
 	$deviceID = $data['deviceID'];
 
-	$result = $db->updateLocation($lat, $lon, $time, $busID);
+	$result = $db->updateLocation($lat, $lon, $time, $deviceID);
+	if($result == "success"){
+		$response["error"] = false;
+		$response["message"] = "success";
+		sendResp(HTTPSTATUS_CREATED, $response);
+	}else{
+		$response["error"] = true;
+		$response["message"] = "fail";
+		sendResp(HTTPSTATUS_OK, $response);
+	}
+	$dbManager->closeConn();
+});
+
+$app->post('/updateRouteMap', function() use ($app){
+	$dbManager = new DBManager();
+	$db = new DbOps($dbManager);
+	$dbManager->openConn();
+
+	$response = array();
+	$json = $app->request->getBody();
+	$data = json_decode($json, true);
+
+	$lat = $data['latitude'];
+	$lon = $data['longitude'];
+
+	$result = $db->updateRouteMap($lat, $lon);
 	if($result == "success"){
 		$response["error"] = false;
 		$response["message"] = "success";
@@ -134,26 +154,40 @@ $app->post('/updateLocation', function() use ($app){
 
 $app->get('/getLocation', function() use ($app){
 	$dbManager = new DBManager();
-    $db = new DbOps($dbManager);
-    $dbManager->openConn();
+    	$db = new DbOps($dbManager);
+    	$dbManager->openConn();
 
-    $response = array();
+    	$response = array();
 	$result = $db->getLocation();
 	$response["error"] = false;
-	$rows = array();
 
 	$response["data"] = array('locations' => $result);
 	sendResp(HTTPSTATUS_OK, $response);
 	$dbManager->closeConn();
 });
 
-$app->get('/getStops', function() use ($app){
+$app->get('/getRouteMap/:route', function($route) use ($app){
 	$dbManager = new DBManager();
-    $db = new DbOps($dbManager);
-    $dbManager->openConn();
+	$db = new DbOps($dbManager);
+	$dbManager->openConn();
 
 	$response = array();
-	$result = $db->getStops();
+	$result = $db->getRoute($route);
+
+	$response["error"] = false;
+	$response["data"] = array('route' => $result);
+
+	sendResp(HTTPSTATUS_OK, $response);
+	$dbManager->closeConn();
+});
+
+$app->get('/getStops/:route', function($route) use ($app){
+	$dbManager = new DBManager();
+    	$db = new DbOps($dbManager);
+    	$dbManager->openConn();
+
+	$response = array();
+	$result = $db->getStops($route);
 
 	$response["error"] = false;
 
@@ -162,13 +196,17 @@ $app->get('/getStops', function() use ($app){
 	$dbManager->closeConn();
 });
 
-$app->get('/getTimetable/:name', function($timeTable) use ($app){
+$app->get('/getTimetable/:name', function($timetable) use ($app){
 	$dbManager = new DBManager();
 	$db = new DbOps($dbManager);
 	$dbManager->openConn();
 
 	$response = array();
 	$result = $db->getTimetable($timetable);
+
+	$response["error"] = false;
+	$response["data"] = array('timetable' => $result);
+	sendResp(HTTPSTATUS_OK, $response);
 	$dbManager->closeConn();
 });
 /*function authenticate(\Slim\Route\ $route){
