@@ -1,0 +1,954 @@
+!SESSION 2016-03-22 14:21:49.000 -----------------------------------------------
+eclipse.buildId=I20100608-0911
+java.version=1.8.0_74
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_IE
+Framework arguments:  -product org.eclipse.epp.package.php.product -product org.eclipse.epp.package.php.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.php.product -data C:\Users\Stefan Burke\workspace\GeoBusServer\public\api -product org.eclipse.epp.package.php.product
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.938
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1216, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.947
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1325, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.951
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1384, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.954
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1518, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.958
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2004, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.963
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2247, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.966
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2365, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.970
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2430, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.973
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3038, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.977
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3425, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.981
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3458, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.985
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3576, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.988
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3635, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.992
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3998, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:14.997
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4317, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.001
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4350, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.004
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4468, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.008
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4527, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.012
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4662, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.016
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4953, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.020
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4986, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.024
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5347, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.029
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5414, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.033
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5635, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.036
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5672, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.040
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5986, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.044
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6049, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.049
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6199, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.053
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6236, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.057
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6553, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.060
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6616, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.065
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6766, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.069
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6803, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.073
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6934, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.076
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6995, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.080
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7151, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.086
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7419, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.092
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7482, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.099
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7552, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.104
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7686, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.110
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7768, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.116
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7880, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.119
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7909, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.123
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7983, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.136
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1216, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.139
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1325, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.143
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1384, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.148
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1384, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.152
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1518, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.157
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2004, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.163
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2247, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.168
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2365, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.172
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2430, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.179
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=2430, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.184
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3038, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.188
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3425, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.192
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3458, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.197
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3576, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.201
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3635, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.205
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3635, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.209
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=3998, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.214
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4317, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.217
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4350, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.221
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4468, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.224
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4527, length=13>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.228
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4527, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.232
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4662, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.236
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4953, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.239
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=4986, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.243
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5347, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.247
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5414, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.250
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5635, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.253
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5672, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.257
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=5986, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.261
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6049, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.265
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6199, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.269
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6236, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.274
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6553, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.277
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6616, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.282
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6766, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.285
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6803, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.289
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6934, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.292
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=6995, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.297
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7151, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.301
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7419, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.305
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7482, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.308
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7552, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.313
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7686, length=3>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.316
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7768, length=10>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.320
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7880, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.323
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7909, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:22:15.328
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=7983, length=4>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:28:32.645
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1157, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 14:28:40.555
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1157, length=5>
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:29:35.704
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:25.127
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:25.208
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:27.910
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:28.060
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:28.485
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:30.676
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:30.739
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:32.109
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:39.281
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:39.352
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:40.190
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:42.195
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:43.628
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:44.360
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:34:49.798
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:35:22.809
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:35:23.256
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:36:46.317
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:43:05.260
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 14:43:05.346
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.jface.text 2 0 2016-03-22 15:11:58.294
+!MESSAGE 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.extractScriptdoc(ProposalInfo.java:106)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.computeInfo(ProposalInfo.java:84)
+	at org.eclipse.dltk.ui.text.completion.ProposalInfo.getInfo(ProposalInfo.java:67)
+	at org.eclipse.dltk.ui.text.completion.AbstractScriptCompletionProposal.getAdditionalProposalInfo(AbstractScriptCompletionProposal.java:440)
+	at org.eclipse.jface.text.contentassist.AdditionalInfoController$3.run(AdditionalInfoController.java:106)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.947
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10719, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.955
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10756, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.964
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10820, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.973
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10866, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.981
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11180, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.986
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11475, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.991
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11513, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.995
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11578, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:09.999
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11625, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.002
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11787, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.006
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11825, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.009
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11890, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.013
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11937, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.016
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12286, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.021
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12335, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.025
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12612, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.029
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12651, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.033
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12717, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.038
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12778, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.041
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13070, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.044
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13109, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.048
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13175, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.051
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13233, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.055
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13526, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.059
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13565, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.062
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13631, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.065
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13689, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.069
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14111, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.073
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14149, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.076
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14225, length=7>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.079
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14322, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.082
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14360, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.085
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14436, length=7>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.089
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14533, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.092
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14571, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.096
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14647, length=7>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.099
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15274, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.102
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15311, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.105
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15376, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.109
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15432, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.128
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10719, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.131
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10719, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.135
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10756, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.138
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10756, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.142
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10798, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.145
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10798, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.148
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10820, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.151
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10820, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.154
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10866, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.157
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=10866, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.161
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11180, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.164
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11475, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.167
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11475, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.170
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11513, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.173
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11513, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.176
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11555, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.179
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11555, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.182
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11578, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.185
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11578, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.188
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11625, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.192
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11625, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.195
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11787, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.198
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11787, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.201
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11825, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.204
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11825, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.207
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11867, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.211
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11867, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.213
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11890, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.216
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11890, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.220
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11937, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.223
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=11937, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.226
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12286, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.229
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12335, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.232
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12612, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.235
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12612, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.237
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12651, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.240
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12651, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.243
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12694, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.246
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12694, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.249
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12717, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.252
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12717, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.256
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12778, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.259
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=12778, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.262
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13070, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.265
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13070, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.268
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13109, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.271
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13109, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.274
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13152, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.277
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13152, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.280
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13175, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.284
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13175, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.288
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13233, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.291
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13233, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.294
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13526, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.297
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13526, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.300
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13565, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.303
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13565, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.307
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13608, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.310
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13608, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.313
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13631, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.316
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13631, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.319
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13689, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.323
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=13689, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.326
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14111, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.330
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14111, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.333
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14149, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.335
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14149, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.338
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14192, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.341
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14192, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.344
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14225, length=7>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.347
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14322, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.351
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14322, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.354
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14360, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.357
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14360, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.360
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14403, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.362
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14403, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.366
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14436, length=7>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.369
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14533, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.372
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14533, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.375
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14571, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.377
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14571, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.380
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14614, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.383
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14614, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.386
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=14647, length=7>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.389
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15274, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.392
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15274, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.395
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15311, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.399
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15311, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.402
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15351, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.405
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15351, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.408
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15376, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.411
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15376, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.414
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15432, length=11>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:10.416
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=15432, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:20.487
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1399, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:20.495
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1576, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:20.504
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1782, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:20.513
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1399, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:20.522
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1576, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:20.529
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1782, length=5>
+
+!ENTRY org.eclipse.php.core 4 4 2016-03-22 16:33:20.536
+!MESSAGE org.eclipse.dltk.core.ModelException: AST node can not be found for the given source range: <offset=1926, length=5>

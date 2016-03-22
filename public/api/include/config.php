@@ -3,6 +3,8 @@
   * @author Stefan Burke
   * @author Stefan Burke <stefan.burke@mydit.ie>
   */
+
+//Set the default timezone
 date_default_timezone_set('Europe/Dublin');
 
 /* HTTP status codes 2xx */
@@ -24,18 +26,12 @@ define ( "HTTPSTATUS_TOKENREQUIRED", 499 );
 /* HTTP status codes 5xx */
 define ( "HTTPSTATUS_INTSERVERERR", 500 );
 
-/* DB Variables */
+/* AWS Remote DB Variables */
 define('DB_USERNAME', 'phpMyAdmin');
 define('DB_PASS', 'phpMyAdmin');
 define('DB_HOST', 'phpmyadmin.cqckkzgczjdc.eu-west-1.rds.amazonaws.com');
 define('DB_NAME', 'geoBus');
 define('DB_PORT', 3306);
 define('DB_VENDOR', 'mysql');
-
-/*define('DB_USERNAME', "pgmyadmin");
-define('DB_PASS', "user=pgmyadmin password=pgmyadmin");
-define('DB_HOST', "host=pgmyadmin.cqckkzgczjdc.eu-west-1.rds.amazonaws.com");
-define('DB_NAME', "dbname=GeoBus");
-define('PORT', "port=5432");*/
 
 ?>

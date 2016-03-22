@@ -2,10 +2,11 @@
 /**
   * @author Stefan Burke
   * @author Stefan Burke <stefan.burke@mydit.ie>
-  */
+**/
+//Set the timezone
 date_default_timezone_set('Europe/Dublin');
 
-class conn {
+class Conn {
 	
 	private $conn;
 	
@@ -22,7 +23,6 @@ class conn {
 			echo "Failed to connect to MySQL: " . mysqli_connect_error();
 		}
 		
-		//$this->conn = pg_connect(DB_HOST, PORT, DB_PASS, DB_NAME) or die('Connection Failed');
 		return $this->conn;
 	}
 	
