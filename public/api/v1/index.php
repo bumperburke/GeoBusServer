@@ -186,7 +186,6 @@ $app->get('/getLocation/:route', function($route) use ($app){
 		$dbManager = new DBManager();
     		$db = new DbOps($dbManager);
     		$dbManager->openConn();
-		var_dump($headers);
 
     		$response = array();
 		$result = $db->getLocation($route);
@@ -226,11 +225,11 @@ $app->get('/getRouteMap/:route', function($route) use ($app){
 });
 
 $app->get('/getStops/:route', function($route) use ($app){
-	/*$headerCheck = headerCheck();
+	$headerCheck = headerCheck();
 	if($headerCheck == "invalid" || $headerCheck == "expired"){
 		$response = "invalid/expired token";
 		sendResp(HTTPSTATUS_OK, $response);
-	}else{*/
+	}else{
 		$dbManager = new DBManager();
     		$db = new DbOps($dbManager);
     		$dbManager->openConn();
@@ -243,7 +242,7 @@ $app->get('/getStops/:route', function($route) use ($app){
 		$response["data"] = array('stops' => $result);
 		sendResp(HTTPSTATUS_OK, $response);
 		$dbManager->closeConn();
-	//}
+	}
 });
 
 $app->get('/getTimetable/:name', function($timetable) use ($app){

@@ -216,7 +216,7 @@ class DbOps {
 
 	public function getTimetable($timetable){
 		$routeID = $this->fetchRouteID($timetable);
-		//$availDays = $this->checkDays($routeID);
+		$availDays = $this->checkDays($routeID);
 
 		if($availDays["monFri"] == true){
 			$stmt2 = "SELECT s.name, mt.time, mt.direction FROM midweekTime mt ";
