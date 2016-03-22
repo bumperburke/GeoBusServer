@@ -141,9 +141,8 @@ $app->post('/updateLocation', function() use ($app){
 	$lon = $data['longitude']; //get longititude from body and assign to variable
 
 	$dateTime = $data['time']; //get time from body and assign to variable
-	$parseTime = explode("T", $dateTime); //parse time on T
-	$parseTime2 = explode(".", $parseTime[1]); //parse again on '.'
-	$time = $parseTime[0]. " " .$parseTime2[0]; //create the time from two parsed items 
+	$parseTime = explode("_", $dateTime); //parse time on _
+	$time = $parseTime[0]. " " .$parseTime[1]; //create the time from two parsed items 
 
 	$deviceID = $data['deviceID']; //get device id from body and assign to variable
 	$routeID = $data['routeID']; //get route id from body and assign to variable
